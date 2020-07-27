@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>salut les gens</h1>    
-    <p>  <%= test %> </p>
-    <strong> <%= test %> </strong>
-</body>
-</html>
+<%- include('header') %>
+
+<form action="/" method="post" class="ui form">
+    
+    <div class="field">
+        <label for="message">Message : </label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+    </div>
+        <button class="ui blue labled submit icon button">
+            <i class="icon edit"></i>    
+            envoyer
+        </button>
+    
+
+</form>
+
+<%- include('footer') %>
