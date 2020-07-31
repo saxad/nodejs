@@ -13,5 +13,24 @@
     
 
 </form>
+<div class="ui comments">
+    <h3 class="ui dividing header">Commentaires</h3>
+    <% for (message of messages) { %>
+        <div class="comment">
+            <a href="" class="avatar">
+                <img src="https://banner2.cleanpng.com/20180408/tvw/kisspng-user-computer-icons-gravatar-blog-happy-woman-5aca6d03e6c3f5.6041125615232156199452.jpg" alt="">
+            </a>
+            <div class="content">
+                <div class="metadata">
+                    <%= message.created_at.fromNow() %>
+                </div>
+                <div class="test">
+                    <%= message.content %>
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+</div>
 
 <%- include('footer') %>

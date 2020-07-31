@@ -30,9 +30,13 @@ app.use(require('./middlewares/flash'))
  */
 
 app.get('/', (request,response) =>{
+  let Message = require('./models/message');
     //console.log(request.session)
-//    console.log(request.session)
-    response.render('pages/index');
+  //    console.log(request.session)
+  Message.all(function(messages) {
+    response.render('pages/index', {messages: messages});
+  });
+  
 })
 
 app.post('/', (request, response) =>{
