@@ -2,7 +2,9 @@ let express = require('express');
 let session = require('express-session');
 let bodyParser = require('body-parser');
 
+
 const { request, response } = require('express');
+const flash = require('./middlewares/flash');
 let app = express()
 
 
@@ -43,6 +45,16 @@ app.post('/', (request, response) =>{
       response.redirect('/')
 
     }
+    else{
+      let Message = require('./models/message')
+      Message.create(request.body.message, function(){
+        request.flash('success', "Merci !");
+        response.redirect('/')
+
+      });
+    }
+
+    
 })
 
 
